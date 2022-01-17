@@ -1,0 +1,45 @@
+### Create a new user
+POST http://localhost:3050/api/users/signup
+content-type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "12345",
+  "firstName": "Admin",
+  "lastName": "24/7"
+}
+
+### Sign in as an existing user
+POST http://localhost:3050/api/users/signin
+content-type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "12345"
+}
+
+### Get the currently signed in user
+GET http://localhost:3050/api/users/whoami
+
+### Sign out
+POST http://localhost:3050/api/users/signout
+
+### Find a particular user with a given ID
+GET http://localhost:3050/api/users/3
+
+### Find all users with a given email
+GET http://localhost:3050/api/users?email=admin@test.com
+
+### Find all users
+GET http://localhost:3050/api/users
+
+### Delete a user given id
+DELETE http://localhost:3050/api/users/4
+
+### Update a user
+PATCH http://localhost:3050/api/users/3
+content-type: application/json
+
+{
+  "password": "12345"
+}

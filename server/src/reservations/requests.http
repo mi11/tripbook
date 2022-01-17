@@ -1,0 +1,39 @@
+### Get all reservation
+GET http://localhost:3050/api/reservations
+
+### Create a new reservation
+POST http://localhost:3050/api/reservations
+content-type: application/json
+
+{
+  "tripId": 1,
+  "requiredSeats": 2
+}
+
+### Cancel reservation
+PATCH http://localhost:3050/api/reservations/2
+content-type: application/json
+
+{
+  "status": "canceled"
+}
+
+### Confirm reservation
+PATCH http://localhost:3050/api/reservations/1
+content-type: application/json
+
+{
+  "status": "completed",
+  "users": [
+    {
+      "email": "a@test.com",
+      "firstName": "A",
+      "lastName": "A"
+    },
+    {
+      "email": "b@test.com",
+      "firstName": "B",
+      "lastName": "B"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+### Create a new trip
+POST http://localhost:3050/api/trips
+content-type: application/json
+
+{
+  "from": "Moscow",
+  "to": "Berlin",
+  "departure": "2022-01-20T15:00:00.000Z",
+  "arrival": "2022-01-21T10:00:00.000Z",
+  "totalSeats": 10,
+  "availableSeats": 10,
+  "price": 10000
+}
+
+### Get all trips
+GET http://localhost:3050/api/trips
+
+### Get trip by id
+GET http://localhost:3050/api/trips/1
+
+
+### Search a trip
+POST http://localhost:3050/api/trips/find
+content-type: application/json
+
+{
+  "from": "Moscow",
+  "to": "Berlin",
+  "departure": "2022-01-20T00:00:00.000Z",
+  "availableSeats": 2
+}
